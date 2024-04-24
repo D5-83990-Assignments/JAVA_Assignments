@@ -1,32 +1,23 @@
-import java.util.Scanner;
+package com.abhi;
 
 public class Que_01 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int allowedLimit;
-		int beginBalance;
-		int charges;
-		int credits;
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter pending balance at the beginning of the month :- ");
-		beginBalance = sc.nextInt();
-		System.out.println("Enter total of all items charged by the customer this month :- ");
-		charges = sc.nextInt();
-		System.out.println("Enter total of all credits applied to the customer’s account this month :- ");
-		credits = sc.nextInt();
-		System.out.println("Enter allowed credit :- ");
-		allowedLimit = sc.nextInt();
-		int cal = beginBalance + charges - credits;
-		if(allowedLimit < cal)
+		Invoice I1 = new Invoice("456", "Arduino", 2, 350);
+		double result = 0;
+		
+		if(I1.getQuantity() < 0 || I1.getPerItemPrice() < 0)
 		{
-			System.out.println("Credit limit exceeded");
+			I1.setQuantity(0);
+			I1.setPerItemPrice(0);
 		}
 		else
 		{
-			System.out.println("New balance for next month :- "+cal);
+			result = I1.getQuantity()*I1.getPerItemPrice();
 		}
+		System.out.println("Your bill is :- "+result);	
+
 	}
 
 }
