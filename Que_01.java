@@ -1,21 +1,28 @@
 package com.sunbeam;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Que_01 {
 
 	public static void main(String[] args) {
-		String s;
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the string :- ");
-		s = sc.next();
-		char[] charS = s.toCharArray();
-		String revS = String.valueOf(charS[s.length()-1]);
-		for(int i=s.length()-2;i>=0;i--)
-		{
-			revS = revS + charS[i]; 
-		}
-		System.out.println("Reverse string :- " + revS);
+		
+		Student[] arr = {
+				new Student(5,"Puneet",549.5),
+				new Student(3,"Mahesh",540.5),
+				new Student(1,"Abhishek",550),
+				new Student(4,"Rushikesh",545.5),
+				new Student(2,"Hemant",548.5)
+		};
+		
+		System.out.println("BEFORE SORTING --> ");
+		for(Student ele : arr)
+			System.out.println(ele);
+		
+		Arrays.sort(arr);
+		
+		System.out.println("AFTER SORTING --> ");
+		for(Student ele : arr)
+			System.out.println(ele);
 	}
 
 }
