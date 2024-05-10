@@ -1,23 +1,21 @@
-package com.abhi;
+package com.sunbeam;
+
+import java.util.Scanner;
 
 public class Que_01 {
 
 	public static void main(String[] args) {
-		
-		Invoice I1 = new Invoice("456", "Arduino", 2, 350);
-		double result = 0;
-		
-		if(I1.getQuantity() < 0 || I1.getPerItemPrice() < 0)
+		String s;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the string :- ");
+		s = sc.next();
+		char[] charS = s.toCharArray();
+		String revS = String.valueOf(charS[s.length()-1]);
+		for(int i=s.length()-2;i>=0;i--)
 		{
-			I1.setQuantity(0);
-			I1.setPerItemPrice(0);
+			revS = revS + charS[i]; 
 		}
-		else
-		{
-			result = I1.getQuantity()*I1.getPerItemPrice();
-		}
-		System.out.println("Your bill is :- "+result);	
-
+		System.out.println("Reverse string :- " + revS);
 	}
 
 }
